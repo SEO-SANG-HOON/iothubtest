@@ -16,7 +16,7 @@ const chalk = require('chalk');
 //
 // Using the Azure CLI:
 // az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyNodeDevice --output table
-var connectionString = '{Your device connection string here}';
+var connectionString = 'HostName=zin-iot-hub-dev.azure-devices.net;DeviceId=MyNodeDevice;SharedAccessKey=IGcH7c9P48CaVNtb2wQLI3JwaxvLzM2pyNPbFvbspqs=';
 
 // Using the Node.js Device SDK for IoT Hub:
 //   https://github.com/Azure/azure-iot-sdk-node
@@ -87,7 +87,7 @@ function sendMessage(){
 }
 
 // Set up the handler for the SetTelemetryInterval direct method call.
-client.onDeviceMethod('SetTelemetryInterval', onSetTelemetryInterval);
+client.onDeviceMethod('SetTelemetryIntervalChanged', onSetTelemetryInterval);
 
 // Create a message and send it to the IoT hub, initially every second.
 intervalLoop = setInterval(sendMessage, 1000);

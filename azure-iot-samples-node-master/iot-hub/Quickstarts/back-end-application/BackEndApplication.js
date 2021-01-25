@@ -14,7 +14,7 @@
 //
 // Using the Azure CLI:
 // az iot hub show-connection-string --hub-name {YourIoTHubName} --policy-name service --output table
-var connectionString = '{Your service connection string here}';
+var connectionString = 'HostName=zin-iot-hub-dev.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey=EUOalGp3r4own9DTZVvIKB54wNyWMOVmnXUhshiAGcY=';
 
 // Using the Node.js Service SDK for IoT Hub:
 //   https://github.com/Azure/azure-iot-sdk-node
@@ -28,8 +28,8 @@ var client = Client.fromConnectionString(connectionString);
 
 // Set the direct method name, payload, and timeout values
 var methodParams = {
-  methodName: 'SetTelemetryInterval',
-  payload: 10, // Number of seconds.
+  methodName: 'SetTelemetryIntervalChanged',
+  payload: 5, // Number of seconds.
   responseTimeoutInSeconds: 30
 };
 
