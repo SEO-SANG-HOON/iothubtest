@@ -29,7 +29,7 @@ var client = Client.fromConnectionString(connectionString);
 // Set the direct method name, payload, and timeout values
 var methodParams = {
   methodName: 'SetTelemetryIntervalChanged',
-  payload: 5, // Number of seconds.
+  payload: 2, // Number of seconds.
   responseTimeoutInSeconds: 30
 };
 
